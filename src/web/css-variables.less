@@ -1,0 +1,359 @@
+// CSS Variables
+/*=========
+css variables doesn't support by less functions to generate lighten, darken, fade, etc.
+We are using color-mix function of css variables.
+ex: color-mix(in srgb, color1 50%, color2 30%)
+// Note: As less doesn't support css funsctions all the css funcions should be with less excepetion to support.
+// ex: ~"calc(100vh - 50px)" instead of calc(100vh - 50px) //
+// ex: ~"color-mix(in srgb, color1 50%, color2 30%)" instead of color-mix(in srgb, color1 50%, color2 30%) //
+=========*/
+
+
+// Alias token as color.background.primary = blue100
+// ex: --color-background-primary
+// Component specific token as button.fab.color.secondary.label = color.secondary
+// ex: --button-fab-color-secondary-label
+
+// variable defines as system.category.variant.scale for design tokens
+// Ex: --wm-color-primary-50
+:root {
+  /**--Colours--**/
+  /*--Primary colours--*/
+  --wm-color-primary :                        rgba(204, 230, 125, 1);
+  --wm-color-primary-10 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-light) 90%)";
+  --wm-color-primary-20 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-light) 75%)";
+  --wm-color-primary-30 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-light) 50%)";
+  --wm-color-primary-40 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-light) 20%)";
+  --wm-color-primary-50 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-light) 0%)";
+  --wm-color-primary-60 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-dark) 20%)";
+  --wm-color-primary-70 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-dark) 30%)";
+  --wm-color-primary-80 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-dark) 40%)";
+  --wm-color-primary-90 :                     ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-dark) 50%)";
+  --wm-color-primary-100 :                    ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-dark) 60%)";
+
+  /*--secondary colours--*/   
+  --wm-color-secondary :                      rgba(75, 133, 155, 1);
+  --wm-color-secondary-10 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-light) 90%)";
+  --wm-color-secondary-20 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-light) 75%)";
+  --wm-color-secondary-30 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-light) 50%)";
+  --wm-color-secondary-40 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-light) 20%)";
+  --wm-color-secondary-50 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-light) 0%)";
+  --wm-color-secondary-60 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-dark) 20%)";
+  --wm-color-secondary-70 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-dark) 30%)";
+  --wm-color-secondary-80 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-dark) 40%)";
+  --wm-color-secondary-90 :                   ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-dark) 50%)";
+  --wm-color-secondary-100 :                  ~"color-mix(in srgb, var(--wm-color-secondary), var(--wm-color-contrast-dark) 60%)";
+
+
+  /*--tertiary color*/
+  --wm-color-tertiary:                        rgba(29, 79, 145, 1);
+  --wm-color-grey:                            rgba(239, 241, 240, 1);
+
+  /*--Action colours--*/
+  //info
+  --wm-color-info :                           rgba(62, 89, 200, 1);
+  --wm-color-info-50 :                        rgb(242, 248, 250);
+  --wm-color-info-100 :                       rgb(222, 238, 242);
+  --wm-color-info-200 :                       rgb(200, 227, 234);
+  --wm-color-info-300 :                       rgb(177, 215, 226);
+  --wm-color-info-400 :                       rgb(161, 207, 219);
+  --wm-color-info-500 :                       rgb(144, 198, 213);
+  --wm-color-info-600 :                       rgb(136, 192, 208);
+  --wm-color-info-700 :                       rgb(125, 185, 202);
+  --wm-color-info-800 :                       rgb(115, 177, 196);
+  --wm-color-info-900 :                       rgb(97, 164, 186);
+  //success
+  --wm-color-success :                        rgba(52, 168, 83, 1);
+  --wm-color-success-50 :                     rgb(243, 249, 227);
+  --wm-color-success-100 :                    rgb(226, 241, 186);
+  --wm-color-success-200 :                    rgb(207, 232, 140);
+  --wm-color-success-300 :                    rgb(187, 222, 94);
+  --wm-color-success-400 :                    rgb(173, 215, 60);
+  --wm-color-success-500 :                    rgb(158, 208, 25);
+  --wm-color-success-600 :                    rgb(150, 203, 22);
+  --wm-color-success-700 :                    rgb(140, 196, 18);
+  --wm-color-success-800 :                    rgb(130, 190, 14);
+  --wm-color-success-900 :                    rgb(112, 179, 8);
+  //warning   
+  --wm-color-warning :                        rgba(255, 68, 79, 1);
+  --wm-color-warning-50 :                     rgb(255, 244, 224);
+  --wm-color-warning-100 :                    rgb(255, 229, 179);
+  --wm-color-warning-200 :                    rgba(246, 115, 41, 0.14);
+  --wm-color-warning-300 :                    rgb(255, 193, 77);
+  --wm-color-warning-400 :                    rgb(255, 180, 38);
+  --wm-color-warning-500 :                    rgb(255, 167, 0);
+  --wm-color-warning-600 :                    rgb(255, 159, 0);
+  --wm-color-warning-700 :                    rgb(255, 150, 0);
+  --wm-color-warning-800 :                    rgb(255, 140, 0);
+  --wm-color-warning-900 :                    rgb(255, 124, 0);
+  //danger
+  --wm-color-danger :                         var(--wm-color-danger-500);
+  --wm-color-danger-2:                        rgba(244, 71, 113, 1);
+  --wm-color-danger-50 :                      rgb(249, 228, 231);
+  --wm-color-danger-100 :                     rgb(240, 186, 195);
+  --wm-color-danger-200 :                     rgb(231, 141, 155);
+  --wm-color-danger-300 :                     rgb(221, 95, 114);
+  --wm-color-danger-400 :                     rgb(213, 60, 84);
+  --wm-color-danger-500 :                     rgb(206, 26, 54); 
+  --wm-color-danger-600 :                     rgb(201, 23, 48);
+  --wm-color-danger-700 :                     rgb(194, 19, 41);
+  --wm-color-danger-800 :                     rgb(188, 15, 34);
+  --wm-color-danger-900 :                     rgb(176, 8, 22);
+
+  /*--common colours--*/
+  --wm-color-contrast-light:                  #ffffff;
+  --wm-color-contrast-dark:                   #000000;
+  --wm-color-dark:                            rgba(14, 14, 14, 1);
+  --wm-body-bg-color:                         rgba(255, 255, 255, 1);
+  --wm-body-font-weight:                      var(--wm-font-weight-regular);
+  --wm-body-text-transform:                   none;
+  --wm-text-color:                            rgba(50, 50, 50, 1);
+  --wm-link-color:                            rgba(41, 109, 246, 1);
+  --wm-separator-color:                       rgba(203, 202, 215, 1); 
+  --wm-text-muted:                            rgba(66, 70, 82, 1);
+  --wm-text-muted-light:                      rgba(66, 70, 82, 0.8);
+  --wm-color-white-light:                     rgba(246, 246, 248, 1);
+  --wm-border-color:                          var(--wm-separator-color);
+
+  /**--Font--**/
+  --wm-font-family:                           "Inter", sans-serif, var(--wm-font-family-backup);
+  --wm-font-family-backup:                    "Arial", sans-serif;
+  --wm-font-weight-thin:                      100;
+  --wm-font-weight-extralight:                200;
+  --wm-font-weight-light:                     300;
+  --wm-font-weight-regular:                   400;
+  --wm-font-weight-medium:                    500;
+  --wm-font-weight-semibold:                  600;
+  --wm-font-weight-bold:                      700;
+  --wm-font-weight-extrabold:                 800;
+  --wm-font-weight-black:                     900;
+  --wm-line-height:                           1;
+  --wm-heading-text-color:                    #000000;
+  --wm-heading-font-family:                   "Inter", sans-serif;
+
+
+/* Font Sizes */
+--wm-font-size-base:                        0.8125rem; /* 13px */
+--wm-h1-font-size:                          2.25rem;  /* 36px */
+--wm-h2-font-size:                          1.5rem;   /* 24px */
+--wm-h3-font-size:                          1.125rem; /* 18px */
+--wm-h4-font-size:                          1rem;     /* 16px */
+--wm-h5-font-size:                          0.875rem; /* 14px */
+--wm-h6-font-size:                          0.75rem;  /* 12px */
+
+--wm-font-lg:                               3rem;     /* 48px */
+--wm-font-md:                               2rem;     /* 32px */ 
+
+--wm-font-15:                               0.9375rem; /* 15px */
+--wm-font-13:                               0.8125rem; /* 13px */
+--wm-font-11:                               0.6875rem; /* 11px */
+--wm-font-10:                               0.625rem;  /* 10px */
+--wm-font-8:                                0.5rem;  /* 8px */
+
+
+
+/* Line Heights */
+--lh-58:                                    58px;
+--lh-38:                                    38px;
+--lh-36:                                    36px;
+--lh-27:                                    27px;
+--lh-26:                                    26px;
+--lh-25:                                    25px;
+--lh-24:                                    24px;
+--lh-18:                                    18px;
+--lh-16:                                    16px;
+--lh-15:                                    15px;
+--lh-normal:                                normal;
+
+
+
+
+  /**--Break points--**/
+  --wm-screen-max-width:                      1440px;
+  --wm-screen-max-width:                      1440px;
+  --wm-screen-lg:                             1366px;
+  --wm-screen-md:                             1200px;
+  --wm-screen-sm:                             920px;
+  --wm-screen-xs:                             768px;
+
+  
+  /**--Standard utility--**/
+  //standard spacing values are multiple of 4 like 0, 4, 8, 12, 16, 24, 48
+  --wm-rule-space:                            4px;
+  --wm-space-0:                               ~"calc(var(--wm-rule-space) * 0)";//0px
+  --wm-space-1:                               ~"calc(var(--wm-rule-space) * 1)";//4px
+  --wm-space-2:                               ~"calc(var(--wm-rule-space) * 2)";//8px
+  --wm-space-3:                               ~"calc(var(--wm-rule-space) * 3)";//12px;
+  --wm-space-4:                               ~"calc(var(--wm-rule-space) * 4)";//16px;
+  --wm-space-5:                               ~"calc(var(--wm-rule-space) * 5)";//20px;
+  --wm-space-6:                               ~"calc(var(--wm-rule-space) * 6)";//24px;
+  --wm-space-7:                               ~"calc(var(--wm-rule-space) * 7)";//28px;
+  --wm-space-8:                               ~"calc(var(--wm-rule-space) * 8)";//32px;
+  --wm-space-9:                               ~"calc(var(--wm-rule-space) * 9)";//36px;
+  --wm-space-10:                              ~"calc(var(--wm-rule-space) * 10)";//40px;
+  --wm-space-11:                              ~"calc(var(--wm-rule-space) * 11)";//44px;
+  --wm-space-12:                              ~"calc(var(--wm-rule-space) * 12)";//48px;
+
+ 
+
+  // icon size
+  --wm-icon-font-family:                      'wmicons';
+  --wm-icon-font:                             "icomoon";
+  --wm-icon-size-1:                           12px; 
+  --wm-icon-size-2:                           20px;
+  --wm-icon-size-3:                           24px;
+  --wm-icon-size-4:                           32px;
+  --wm-icon-size-5:                           40px;
+  --wm-icon-size-6:                           52px;
+
+
+  /**--Page Layout--**/
+  --wm-page-spacing:                          1rem  2.75rem;
+  /*--app header--*/
+  --wm-header-bg-color:                       var(--wm-color-contrast-light);
+  --wm-header-text-color:                     var(--wm-text-color);
+  --wm-header-link-color:                     var(--wm-color-secondary-80);
+  --wm-header-link-color-hover:               var(--wm-color-secondary);
+  --wm-header-link-color-active:              var(--wm-color-secondary);
+  --wm-header-logo-height:                    44px;
+  --wm-header-height:                         88px;
+  --wm-header-z-index:                        10;
+  --wm-header-shadow:                         none;
+  --wm-header-padding:                         0 52px 0 0;
+  --wm-header-leftnav-width:                  88px;
+ 
+
+  /*--app top nav--*/
+  --wm-top-nav-box-shadow:                    none;
+  --wm-top-nav-z-index:                       3;
+
+  /*--app side panel--*/
+  --wm-aside-panel-width:                     88px;
+  --wm-aside-panel-link-height:               auto;
+  --wm-aside-panel-collapsible-width:           0px;
+  --wm-aside-separator-color:                 var(--wm-color-mid-grey-500);
+  --wm-aside-panel-border-color:              #EFF1F0;
+  --wm-aside-panel-shadow:                    none;
+  --wm-aside-panel-bg-color:                  var(--wm-color-contrast-light);
+  --wm-aside-panel-text-color:                var(--wm-text-color);
+  --wm-aside-panel-link-spacing:              var(--wm-space-4);
+  --wm-aside-panel-link-color:                var(--wm-text-color);
+  --wm-aside-panel-link-hover-color:          var(--wm-text-color);
+  --wm-aside-panel-link-active-color:         var(--wm-text-color);
+  --wm-aside-panel-link-bg-color:             var(--wm-color-contrast-light);
+  --wm-aside-panel-link-hover-bg-color:       var(--wm-color-primary);
+  --wm-aside-panel-link-active-bg-color:      var(--wm-color-primary);
+  --wm-aside-panel-link-font-size:            var(--wm-icon-size-3);
+  --wm-aside-panel-link-icon-size:            var(--wm-icon-size-3);
+  --wm-aside-panel-link-icon-color:           var(--wm-text-color);
+  --wm-aside-panel-link-icon-hover-color:     var(--wm-text-color);
+  --wm-aside-panel-link-icon-active-color:    var(--wm-text-color);
+  --wm-aside-panel-link-indicator-active-color: transparent;
+  --tabs-border-gradient:                     var(--wm-color-primary);
+  
+  /*--app page content--*/
+  --wm-page-bg-color:                         var(--wm-color-contrast-light);
+  --wm-disabled-color:                        #dedede;
+ 
+
+  /*--app footer--*/
+  --wm-footer-spacing:                        4.5rem 2.5rem;
+  --wm-footer-bg:                             rgba(242, 244, 247, 1);
+  --wm-footer-text-color:                     rgba(22, 28, 45, 1);
+  --wm-footer-text-muted-color:               rgba(135, 143, 157, 1);
+  --wm-footer-height:                         80px;
+  --wm-footer-separator-color:                transparent;
+  --footer-top-margin:                        24px;
+  
+
+
+
+  /**--Components--**/
+  /*--form filed--*/
+  --wm-input-height-base:                     48px;
+  --wm-input-height-small:                    35px;
+  --wm-input-height-large:                    60px;
+  --wm-input-place-holder:                    rgba(49, 49, 49, 1);
+  --wm-input-search-place-holder:             var(--wm-text-muted);
+  --wm-input-bg:                              var(--wm-color-contrast-light);
+  --wm-input-border-color:                    rgba(239, 241, 240, 1);
+  --wm-input-border-radius:                   var(--border-radius-md);
+  --wm-select-spacing:                        9px 24px 9px 12px;
+  --wm-search-spacing:                        .5rem 2.5rem .5rem .75rem;
+  --wm-input-font-base:                       var(--wm-h5-font-size);
+  --wm-input-group-spacing:                   8px 12px;
+
+  /*--button--*/
+  --wm-btn-font-size:                         var(--wm-h5-font-size);
+  --wm-btn-text-color:                        var(--wm-text-color);
+  --wm-btn-font-weight:                       var(--wm-font-weight-medium);
+  --wm-btn-shadow:                            none;
+  --wm-btn-height-base:                       48px;
+  --wm-btn-height-xs:                         28px;
+  --wm-btn-height-sm:                         40px;
+  --wm-btn-height-lg:                         48px;
+  --wm-btn-min-width:                         auto;//120px;
+  --wm-btn-space:                             var(--wm-space-3) var(--wm-space-4);
+  --wm-btn-radius-base:                       var(--wm-space-3);
+  --wm-btn-state-layer-color:                 transparent;
+  --wm-btn-hover-state-layer-opacity:         0.2;
+  --wm-btn-pressed-state-layer-opacity:       0.12;
+  --wm-btn-contrast-white:                    #ffffff;
+  --wm-btn-contrast-black:                    rgba(0,0,0,0.87);
+  --wm-btn-raised-shadow:                     3px 3px 6px 0 rgba(0,0,0,0.16);
+  --wm-btn-raised-hover-shadow:               0px 2px 4px -1px rgba(0, 0, 0, .2), 0px 4px 5px 0px rgba(0, 0, 0, .14), 0px 1px 10px 0px rgba(0, 0, 0, .12);
+  --wm-btn-raised-active-shadow:              0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);
+
+  /*--app grid (or) Data Table --*/
+  --wm-app-grid-bg-color:                     transparent;
+  --wm-app-grid-radius:                       0;
+  --wm-app-grid-spacing:                      0;
+  --wm-app-grid-table-bg-color:               var(--wm-color-contrast-light);
+  --wm-app-grid-table-radius:                 0;
+  --wm-app-grid-header-bg:                    var(--wm-color-primary);
+  --wm-app-grid-header-text-color:            var(--wm-color-light-grey-200);
+  --wm-app-grid-header-radius:                0;
+  --wm-app-grid-separator:                    var(--wm-color-mid-grey-100);
+  --wm-app-grid-text-color:                   var(--wm-color-dark-grey-800);
+
+
+  // check
+  --wm-check-icon-content-code:"\e903";
+
+   //scroll bar styles
+
+  --scroll-bar-width: 4px;
+  --scroll-bar-height: 4px;
+  --scroll-bar-radius:4px;
+  --scroll-bar-thumb: rgba(215, 221, 228, 1);
+  --scroll-bar-thumb-hover: rgba(215, 221, 228, 1);
+  --scroll-bar-track: transparent;
+
+
+  /*----border variables----*/
+  --border-radius-base: 12px;
+  --border-radius-large: ~"calc(var(--border-radius-base) * 2)"; //24px
+  --border-radius-md:var(--wm-space-2);
+  --border-radius-16:var(--wm-space-4);
+  --border-radius-small: ~"calc(var(--border-radius-base) * 0.5)"; //6px
+  --border-radius-xs:var(--wm-rule-space);
+
+ 
+  // Table
+
+  --wm-app-grid-header-border:rgba(231, 233, 233, 1);
+  --wm-app-grid-header-bg:rgba(242, 243, 244, 1);
+  --pagination-active-bg:var(--wm-color-secondary);
+  --wm-date-picker-head-bg:#cfe2e9;
+  --wm-calender-heading-space:20px;
+  --wm-input-disablded-color:rgba(0, 0, 0, 0.03);
+
+
+  //wizard
+  --wm-wizard-step-content-spacing:30px 40px 88px;
+  --wm-vertical-wizard-content-min-height:750px;
+  --wm-app-steps-bg:rgba(232, 241, 242, 1);
+  --wm-horizontal-wizard-content-max-wd:1120px;
+  --wm-horizontal-wizard-content-height:750px;
+
+}
