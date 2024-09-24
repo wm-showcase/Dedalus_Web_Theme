@@ -13,9 +13,7 @@ module.exports = function (grunt) {
         themes_dist: 'dist',
         themes_fonts: 'components/bootstrap',
         themes_icons: 'components/wavicon',
-        web_zip : 'web.zip',
-        mobile_zip : 'mobile.zip',
-        bootswatch_zip : 'bootswatch.zip'
+        web_zip : 'web.zip'
     };
     // To generate compress config for themes
     var buildCompressConfig = function () {
