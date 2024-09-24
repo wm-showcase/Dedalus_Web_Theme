@@ -65,29 +65,8 @@ module.exports = function (grunt) {
                     files: [
                         {'<%= config.themes_tmp %>/.wmproject.properties' : '<%= config.themes_tmp %>/web/.wmproject.properties'}
                     ]
-                },
-                mobile: {
-                    options: {
-                        actions: [
-                            {type: 'R', xpath: '/properties/entry[@key="version"]', saveAs: 'mobile-version'},
-                            {type: 'R', xpath: '/properties/entry[@key="name"]', saveAs: 'mobile-name'}
-                        ]
-                    },
-                    files: [
-                        {'<%= config.themes_tmp %>/.wmproject.properties' : '<%= config.themes_tmp %>/mobile/.wmproject.properties'}
-                    ]
-                },
-                bootswatch: {
-                    options: {
-                        actions: [
-                            {type: 'R', xpath: '/properties/entry[@key="version"]', saveAs: 'bootswatch-version'},
-                            {type: 'R', xpath: '/properties/entry[@key="name"]', saveAs: 'bootswatch-name'}
-                        ]
-                    },
-                    files: [
-                        {'<%= config.themes_tmp %>/.wmproject.properties' : '<%= config.themes_tmp %>/bootswatch/.wmproject.properties'}
-                    ]
                 }
+               
             },
             less: {
                 themes: {
